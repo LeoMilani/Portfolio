@@ -55,6 +55,18 @@ header div.text h2 {
 	font-size: 35px;
 }
 
+.destaque-nome {
+	color: #000000;
+	/* azul elegante */
+	font-weight: bold;
+}
+
+.destaque-profissao {
+	color: #000000;
+	/* coral suave, contrastando bem */
+	font-weight: bold;
+}
+
 section {
 	display: flex;
 	flex-direction: row;
@@ -133,6 +145,8 @@ section.horizontal img {
 	color: #fff;
 	margin-bottom: 20px;
 	text-align: center;
+	background-color: rgb(32 106 110 / 65%);
+	border-radius: 10px;
 }
 
 .cards a {
