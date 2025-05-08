@@ -44,6 +44,81 @@ header div.h3ader ul li a {
 	font-size: 30px;
 }
 
+header {
+	position: relative;
+	width: 100%;
+	min-height: 700px;
+	/* Changed from fixed height */
+	background-color: #666;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header div.h3ader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	/* garante que nunca ultrapasse a viewport */
+	height: 56px;
+	background-color: #000;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header div.h3ader ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 30px;
+	list-style: none;
+}
+
+header div.h3ader ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+/* =============================
+	 IMAGEM DE PERFIL (posição original)
+	 ============================= */
+
+header div.img {
+	position: absolute;
+	left: 80px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+header div.img img {
+	width: auto;
+	height: 500px;
+	border-radius: 15px;
+	box-shadow: 0 0 30px black;
+}
+
+header div.text {
+	position: absolute;
+	left: 640px;
+	top: 50%;
+	transform: translateY(-50%);
+	max-width: calc(100vw - 640px - 100px);
+	padding-right: 20px;
+}
+
+
+header div.text h2 {
+	margin: 0;
+	color: #fff;
+	font-size: 35px;
+	line-height: 1.3;
+}
+
+/*
 header div.img img {
 	box-shadow: 0px 0px 30px 0px black;
 	position: absolute;
@@ -61,7 +136,7 @@ header div.text h2 {
 	color: #FFF;
 	font-size: 35px;
 }
-
+*/
 .destaque-nome {
 	color: #000000;
 	/* azul elegante */
@@ -135,7 +210,9 @@ section.horizontal img {
 
 .cards div {
 	width: 300px;
-	height: 245px;
+	min-height: 245px;
+	/* Instead of fixed height */
+	height: auto;
 	background-color: #933009;
 	box-shadow: 0px 0px 30px 0px rgb(211, 110, 10);
 	display: flex;
@@ -220,58 +297,69 @@ footer div.footer i {
 		overflow-x: hidden;
 	}
 
-	header div.img img {
-		position: static;
+	/* Reset header positioning */
+	header {
+		min-height: auto;
+		padding-top: 70px;
+		padding-bottom: 40px;
 		display: block;
-		margin: 80px auto 20px auto;
-		/* espaço abaixo do menu */
-		width: 80%;
-		max-width: 200px;
-		height: auto;
-		box-shadow: 0px 0px 20px 0px black;
 	}
 
-	/* Texto principal */
-	header div.text h2 {
+	header div.img {
 		position: static;
-		padding: 15px;
+		transform: none;
 		text-align: center;
-		font-size: 20px;
-		color: #fff;
+		margin: 30px auto;
+		width: 100%;
 	}
 
-	/* Menu fixo centralizado */
-	header div.h3ader {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	header div.img img {
+		width: 70%;
+		max-width: 280px;
+		height: auto;
 	}
 
+	header div.text {
+		position: static;
+		transform: none;
+		max-width: 100%;
+		padding: 20px;
+		text-align: center;
+		margin-top: 0;
+	}
+
+	header div.text h2 {
+		font-size: 18px;
+		line-height: 1.5;
+	}
+
+	header div.text h2 {
+		font-size: 18px;
+		line-height: 1.4;
+	}
+
+	/* Navigation adjustments */
 	header div.h3ader ul {
-		padding: 0;
-		margin: 0;
-	}
-
-	header div.h3ader ul li {
-		display: flex;
-		gap: 20px;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+		padding: 10px;
 	}
 
 	header div.h3ader ul li a {
-		font-size: 25px;
+		font-size: 18px;
 		margin-left: 0;
 	}
 
-	/* Alinhamento dos cards */
+	/* Project cards - stack vertically */
 	.cards {
 		flex-direction: column;
 		align-items: center;
-		padding: 10px;
 	}
 
 	.cards div {
 		width: 90%;
-		height: auto;
+		margin-bottom: 20px;
 	}
 }
 
